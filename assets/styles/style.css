@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:ital,wght@1,900&family=Quicksand&display=swap');
+
+
+* {
+    font-family: 'Lato', 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+main {
+    overflow: auto;
+}
+
+
+/*Styling Header and Nav bar*/
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.name-style1 {
+    color: #f56300;
+    font-weight: 800;
+}
+
+.name-style2 {
+    font-weight: 500;
+    color: rgba(192, 192, 192, 0.593);
+    padding-left: 2px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #f56300;
+    bottom: -2px;
+    left: 0;
+    transition: ease .40s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+header.sticky {
+    background: rgba(0, 0, 0, 0.818);
+    padding: 10px 20px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 10%);
+    transition: all 0.6s ease-out;
+}
+
+header.sticky a {
+    color: silver;
+}
+
+header.sticky .name-style1 {
+    color: rgba(192, 192, 192, 0.593);
+}
+
+header.sticky .name-style2 {
+    color: #f56300;
+}
+
+/*Styling Aside*/
+.profile-container {
+    max-width: auto;
+    background: white;
+    background-size: 1500px;
+    margin: auto;
+    padding: 40px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    align-items: center;
+    text-align: left;
+}
+
+.sub-profile {
+    padding: 20px;
+}
+
+.sub-profile h1 {
+    margin: 10px 0px 10px;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.sub-profile h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sub-profile p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.sub-profile span {
+    color: #f56300;
+}
+
+.sub-profile-image {
+    border: 0 solid #000;
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 50%;
+    object-position: center;
+    margin: 30px;
+    top: 0;
+    position: relative;
+}
+
+/*Styling Content Projects*/
+.projects {
+    background: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 4);
+    padding: 15px;
+    text-align: center;
+}
+
+
+.projects h2 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.projects h3 {
+    font-family: 'Great Vibes', 'Lato', sans-serif;
+    font-size: 30px;
+    color: #f56300;
+}
+
+.gallery {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery img {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.gallery img:hover {
+    transition: ease .50s;
+    box-shadow: 18px 0 px 87px 0px rgb(10, 15, 70, 10);
+    will-change: transform;
+    transform: perspective(1000px) scale3d(1.1, 1.1, 1.1);
+}
+
+/*Styling photography*/
+.photo-cont {
+    width: 1204px;
+    border: 2px solid #f56300;
+    margin: 40 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo-cont img {
+    width: 300px;
+    height: 400px;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    transform: scale(1);
+    transition: all 0.5s ease-out;
+}
+
+.card img:hover {
+    transform: scale(1.4);
+    transition: all 0.5s ease-in;
+}
+
+.sub-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 0.10);
+    z-index: 100;
+    text-align: center;
+    padding: 120px 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.sub-card h1 {
+    color: #f56300;
+}
+
+.sub-card img {
+    width: 400px;
+    height: 500px;
+    margin: auto 0;
+}
+
+.sub-card:target {
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: rgb(0 0 0 0.10);
+    transition: all 0.3s ease-in;
+}
+
+
+
+/*Styling Content Awards*/
+.awards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.awards-container h2 span {
+    color: #f56300;
+}
+
+.awards-container h2 {
+    margin-top: 10px;
+    font-size: 35px;
+    font-weight: 600;
+    padding: 10px;
+    position: relative;
+}
+
+.sub-container {
+    padding: 45px 45px 45px 45px;
+    transition: ease .50s;
+    cursor: pointer;
+}
+
+.sub-container img {
+    max-width: 100%;
+    width: 280px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.sub-container h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.sub-container p {
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+}
+
+.sub-container:hover {
+    background: #fff;
+    box-shadow: 18px 0 px 87px 0px rgb(10, 15, 70, 7);
+    border-radius: 12px;
+    will-change: transform;
+    transform: perspective(1000px) scale3d(1.20, 1.20, 1.20);
+}
+
+/*Styling Content Skill*/
+.skill-container span {
+    color: #f56300;
+}
+
+.skill-container {
+    position: relative;
+    background: black;
+    padding: 6px;
+}
+
+.skill-container h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, auto));
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img:hover {
+    transition: ease .50s;
+    cursor: pointer;
+    will-change: transform;
+    transform: perspective(1000px) scale3d(1.20, 1.20, 1.20);
+}
+
+/*Styling footer content*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    #content,
+    aside,
+    .profile-container,
+    .projects,
+    .skill-container,
+    .img-container,
+    footer {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .photo-cont {
+        width: 604px;
+    }
+
+    .sub-card img {
+        width: 450px;
+        height: 650px;
+
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+
+    .sub-profile-image {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .photo-cont {
+        width: 302px;
+    }
+
+    .sub-card img {
+        width: 350px;
+        height: 500px;
+
+    }
+
+}
